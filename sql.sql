@@ -34,12 +34,14 @@ create table registro(
 codR integer auto_increment,
 codP integer NOT NULL,
 codS integer NOT NULL,
+codD integer NOT NULL,
 horario_saida DATETIME NOT NULL,
 horario_entrada DATETIME NOT NULL,
 devolucao boolean,
 PRIMARY KEY(codR),
 FOREIGN KEY(codP) REFERENCES professor(codP),
-FOREIGN KEY(codS) REFERENCES labsala(codS));
+FOREIGN KEY(codS) REFERENCES labsala(codS)
+FOREIGN KEY(codD) REFERENCES disciplina(codD));
 
 
 
@@ -70,6 +72,6 @@ insert into professor(nome,disciplinas_P)values('Claudia Patricia Candia Maciel'
 insert into professor(nome,disciplinas_P)values('Cleison','7,8');
 insert into professor(nome,disciplinas_P)values('Daniele Cristina Marim Molero','8');
 insert into professor(nome,disciplinas_P)values('Edson Antônio Ramires','9');
-insert into registro values(1,1,1,'2016-12-12 09:20:23','2016-12-12 09:22:23',true);
+insert into registro(codP,codS,codD,horario_saida,horario_entrada, devolucao)values(1,1,1,'2016-12-12 09:20:23','2016-12-12 09:22:23',true);
 insert into nivel values(1,'randal');
 insert into login values(1, 'randal', 'f84278cfa4794b3aa628b99977901f2f',1);

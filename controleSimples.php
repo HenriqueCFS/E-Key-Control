@@ -9,6 +9,19 @@ require('functions.php');
     </head>
     <body>
     	<table border="1">
+            <?php 
+                $reg = bancoConsulta_fetchAll('select * from registro');
+                foreach($reg as $reg):
+             ?>
+            <tr>
+                <td><?=$reg['horario_saida']?></td>
+                <td><?php $pnome = bancoConsulta('select nome from professor where codP='.$reg['codP']);echo $pnome['nome'];?></td>
+                <td><?=$reg['codP']?></td>
+                <td><?=$reg['codD']?></td>
+                <td></td>
+                <td><?=$reg['horario_entrada']?></td>
+            </tr>
+        <?php endforeach; ?>
         	<tr>
         		<td>
                 	<h4> Data/Hora</h4>
