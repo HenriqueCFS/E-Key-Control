@@ -56,7 +56,7 @@ require('functions.php');
                	<td>
                 	<h4>Devolução</h4>
                         	<h4><input type="radio" name="render" value="opc">Sim</h4>
-                            <h4><input type="radio" name="render" value="opc">Nao</h4>
+
                 </td>
                 <td>
                 	<h4> Data/Hora</h4>
